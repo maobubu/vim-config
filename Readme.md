@@ -1,6 +1,6 @@
 ##Vim configuration based on vim-airline
 
-1.Clone the repository
+1. Clone the repository
 ```
 git clone git https://github.com/maobubu/vim-config.git
 ```

@@ -5,6 +5,7 @@ let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 set hlsearch
 set nobackup
+set encoding=utf-8
 set nowritebackup
 set noswapfile
 set tabstop=4

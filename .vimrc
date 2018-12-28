@@ -5,6 +5,7 @@ nmap <F8> :TagbarToggle<CR>
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+set encoding=utf-8
 set hlsearch
 set nobackup
 set nowritebackup

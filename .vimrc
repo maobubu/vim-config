@@ -1,11 +1,12 @@
 set ruler
 colorscheme peachpuff
 let g:airline#extensions#tabline#enabled = 1
+nmap <F8> :TagbarToggle<CR>
+let g:airline#extensions#tagbar#enabled = 1
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 set hlsearch
 set nobackup
-set encoding=utf-8
 set nowritebackup
 set noswapfile
 set tabstop=4

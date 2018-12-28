@@ -10,7 +10,16 @@ cd vim-config
 cp -r .vim ~/
 cp vimrc ~/.vimrc
 ```
-3. Try some crazy features
+3. Some of the plugins in the bundle/ folder might be missing,
+you will have to install them manually
+```
+```
+ctrlp
+tagbar
+vim-airline-them
+vim-gitgutter
+```
+4. Try some crazy features
 Tagbar
 ```
 :Tagbar or <F8>

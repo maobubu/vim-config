@@ -10,3 +10,16 @@ cd vim-config
 cp -r .vim ~/
 cp vimrc ~/.vimrc
 ```
+3. Try some crazy features
+Tagbar
+```
+:Tagbar or <F8>
+```
+NERDTree
+```
+:NERDTree
+```
+ctrlp
+```
+CTRL+P
+```

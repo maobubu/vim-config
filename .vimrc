@@ -1,7 +1,6 @@
 set ruler
 colorscheme peachpuff
 let g:airline#extensions#tabline#enabled = 1
-nmap <F7> :NERDTree<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :Tlist<CR>
 nmap <F7> :NERDTree<CR>

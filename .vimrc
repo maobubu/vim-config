@@ -71,3 +71,11 @@ autocmd FileType yang setlocal shiftwidth=2 tabstop=2 expandtab
 :set guioptions-=T  "remove toolbar
 :set noerrorbells
 :set vb
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

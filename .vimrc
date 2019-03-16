@@ -1,10 +1,9 @@
 set ruler
 colorscheme peachpuff
 let g:airline#extensions#tabline#enabled = 1
+nmap <F7> :NERDTree<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :Tlist<CR>
-nmap <F7> :NERDTree<CR>
-map <c-l> :CtrlPBufTagAll<CR>
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -77,5 +76,9 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['python3']
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+

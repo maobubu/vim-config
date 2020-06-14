@@ -1,11 +1,11 @@
 set ruler
 colorscheme peachpuff
 let g:airline#extensions#tabline#enabled = 1
+nmap <F7> :NERDTree<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :Tlist<CR>
-nmap <F7> :NERDTree<CR>
-nmap ,c :%s///gn
 map <c-l> :CtrlPBufTagAll<CR>
+nmap ,c :%s///gn
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -31,11 +31,15 @@ set updatetime=100
 set noic
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline
 " Highlight tab characters
-set listchars=tab:>-,trail:~
+set listchars=tab:>-
+" ,trail:~
+" set listchars=tab:>-,trail:~,extends:>,precedes:<,eol:$
 highlight SpecialKey ctermfg=DarkBlue
-"set list
+set list
+checktime
 
 " Tab hotkeys
+nnoremap space i<space><esc>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
@@ -66,8 +70,10 @@ nnoremap ,n :NERDTree <CR>
 set wildmenu
 set path=$PWD/**
 " autocmd FileType c,cpp,java,php,yang,pl autocmd BufWritePre <buffer> :%s/\s\+$//e
-autocmd BufWritePre * %s/\s\+$//e
-autocmd FileType yang setlocal shiftwidth=2 tabstop=2 expandtab
+" This will remove all trailing white space and other, don't want to use it as
+" there are so many indentation problem here
+" autocmd BufWritePre * %s/\s\+$//e
+" autocmd FileType yang setlocal shiftwidth=2 tabstop=2 expandtab
 
 :set guioptions-=T  "remove toolbar
 :set noerrorbells
@@ -75,12 +81,30 @@ autocmd FileType yang setlocal shiftwidth=2 tabstop=2 expandtab
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:indentLine_enabled = 0
 
 let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 "let g:syntastic_quiet_messages = { "type": "style" }
-let g:syntastic_cpp_check_header=1
+let g:syntastic_check_on_wq = 1
 let g:syntastic_python_checkers = ['python3']
-let g:indentLine_enabled = 0
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
+
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeGlyphReadOnly = "RO"
+let g:NERDTreeNodeDelimiter = "\u00a0"
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_files = 0
+
+highlight! link SignColumn LineNr
+"highlight GitGutterAdd    guifg=#009900 ctermfg=2
+"highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+"highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+highlight GitGutterAdd    guifg=#009900 ctermfg=169
+highlight GitGutterChange guifg=#bbbb00 ctermfg=76
+highlight GitGutterDelete guifg=#ff2222 ctermfg=132
